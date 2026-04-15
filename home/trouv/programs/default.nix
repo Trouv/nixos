@@ -14,4 +14,12 @@
   programs.jq.enable = true;
 
   programs.htop.enable = true;
+
+  programs.alacritty.enable = true;
+
+  programs.waybar.enable = true;
+
+  programs.fuzzel.enable = true;
+
+  programs.swaylock.enable = true;
 }
