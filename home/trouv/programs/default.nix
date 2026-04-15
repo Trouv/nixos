@@ -25,4 +25,6 @@
   programs.swaylock.enable = true;
 
   custom.pgp.enable = true;
+
+  programs.vesktop.enable = true;
 }
