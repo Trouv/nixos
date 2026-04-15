@@ -5,6 +5,7 @@
     ./nvim.nix
     ./direnv.nix
     ./gh.nix
+    ./gpg-agent.nix
   ];
 
   programs.ripgrep.enable = true;
@@ -22,4 +23,6 @@
   programs.fuzzel.enable = true;
 
   programs.swaylock.enable = true;
+
+  custom.pgp.enable = true;
 }
