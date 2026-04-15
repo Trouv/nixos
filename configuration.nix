@@ -4,11 +4,13 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.niri.nixosModules.niri
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -24,6 +26,7 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -46,18 +49,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  programs.niri.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
