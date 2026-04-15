@@ -10,6 +10,7 @@
     };
     # neovim distribution with nice defaults and nix config
     nvf.url = "github:NotAShelf/nvf";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = {
