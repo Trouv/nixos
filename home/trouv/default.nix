@@ -24,5 +24,7 @@
     noto-fonts-color-emoji
     nerd-fonts.fira-code
     proggyfonts
+
+    tree
   ];
 }
