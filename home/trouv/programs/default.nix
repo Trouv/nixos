@@ -6,6 +6,7 @@
     ./direnv.nix
     ./gh.nix
     ./gpg-agent.nix
+    ./firefox.nix
   ];
 
   programs.ripgrep.enable = true;
