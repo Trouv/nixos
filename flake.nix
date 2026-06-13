@@ -3,14 +3,19 @@
 
   inputs = {
     # NixOS official package source, using the nixos-25.11 branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # neovim distribution with nice defaults and nix config
-    nvf.url = "github:NotAShelf/nvf";
-    niri.url = "github:sodiboo/niri-flake";
+    nvf = {
+      url = "github:NotAShelf/nvf";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
