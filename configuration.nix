@@ -2,7 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -12,6 +11,9 @@
     ./hardware-configuration.nix
     inputs.niri.nixosModules.niri
   ];
+
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
+  programs.niri.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -50,8 +52,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  programs.niri.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

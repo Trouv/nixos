@@ -21,8 +21,10 @@
   outputs = {
     nixpkgs,
     home-manager,
+    niri,
     ...
   } @ inputs: {
+    nixpkgs.overlays = [niri.overlays.niri];
     nixosConfigurations.pangolin = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
