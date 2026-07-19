@@ -95,6 +95,17 @@
     #  wget
     wl-clipboard
     brightnessctl
+
+    # file manager
+    nautilus
+    # image viewer
+    loupe
+    # audio player
+    decibels
+    # video player
+    showtime
+    # disk usage analyzer
+    baobab
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
