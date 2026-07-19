@@ -79,7 +79,7 @@
   users.users.trouv = {
     isNormalUser = true;
     description = "Trevor Lovell";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "input"];
     packages = with pkgs; [
       #  thunderbird
     ];
