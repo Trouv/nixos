@@ -106,6 +106,10 @@
     showtime
     # disk usage analyzer
     baobab
+    # document scanner
+    simple-scan
+    # document viewer
+    papers
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
