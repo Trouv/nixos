@@ -7,6 +7,7 @@
     ./gh.nix
     ./gpg-agent.nix
     ./firefox.nix
+    ./waybar
   ];
 
   programs.ripgrep.enable = true;
@@ -18,8 +19,6 @@
   programs.htop.enable = true;
 
   programs.alacritty.enable = true;
-
-  programs.waybar.enable = true;
 
   programs.fuzzel.enable = true;
 
