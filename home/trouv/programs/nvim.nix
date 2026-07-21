@@ -70,6 +70,8 @@
       };
 
       statusline.lualine.enable = true;
+
+      filetree.neo-tree.enable = true;
     };
   };
 }
