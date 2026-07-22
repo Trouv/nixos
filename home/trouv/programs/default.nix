@@ -8,6 +8,7 @@
     ./gpg-agent.nix
     ./firefox.nix
     ./waybar
+    ./niri
   ];
 
   programs.ripgrep.enable = true;
