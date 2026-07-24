@@ -163,10 +163,12 @@
       {
         matches = [{app-id = "^vesktop$";}];
         open-on-workspace = "chat";
+        open-maximized = true;
       }
       {
         matches = [{app-id = "^firefox$";}];
         open-on-workspace = "web";
+        open-maximized = true;
       }
     ];
   };
