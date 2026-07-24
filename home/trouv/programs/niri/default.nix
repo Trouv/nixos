@@ -146,6 +146,22 @@
       "Mod+Shift+P".action.power-off-monitors = {};
     };
 
-    workspaces."chat" = {};
+    workspaces = {
+      "w".name = "games";
+      "x".name = "media";
+      "y".name = "web";
+      "z".name = "chat";
+    };
+
+    window-rules = [
+      {
+        matches = [{app-id = "^vesktop$";}];
+        open-on-workspace = "chat";
+      }
+      {
+        matches = [{app-id = "^firefox$";}];
+        open-on-workspace = "web";
+      }
+    ];
   };
 }
