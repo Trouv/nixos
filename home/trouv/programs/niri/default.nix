@@ -23,7 +23,7 @@
 
     binds = {
       "Mod+Shift+Slash".action.show-hotkey-overlay = {};
-      "Mod+T" = {
+      "Mod+Return" = {
         action.spawn = "alacritty";
         hotkey-overlay.title = "Open terminal";
       };
