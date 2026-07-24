@@ -62,8 +62,8 @@
 
       "Mod+Home".action.focus-column-first = {};
       "Mod+End".action.focus-column-last = {};
-      "Mod+Ctrl+Home".action.move-column-to-first = {};
-      "Mod+Ctrl+End".action.move-column-to-last = {};
+      "Mod+Shift+Home".action.move-column-to-first = {};
+      "Mod+Shift+End".action.move-column-to-last = {};
 
       "Mod+Ctrl+Left".action.focus-monitor-left = {};
       "Mod+Ctrl+Down".action.focus-monitor-down = {};
@@ -87,15 +87,15 @@
       "Mod+Page_Up".action.focus-workspace-up = {};
       "Mod+U".action.focus-workspace-down = {};
       "Mod+I".action.focus-workspace-up = {};
-      "Mod+Ctrl+Page_Down".action.move-column-to-workspace-down = {};
-      "Mod+Ctrl+Page_Up".action.move-column-to-workspace-up = {};
-      "Mod+Ctrl+U".action.move-column-to-workspace-down = {};
-      "Mod+Ctrl+I".action.move-column-to-workspace-up = {};
+      "Mod+Shift+Page_Down".action.move-column-to-workspace-down = {};
+      "Mod+Shift+Page_Up".action.move-column-to-workspace-up = {};
+      "Mod+Shift+U".action.move-column-to-workspace-down = {};
+      "Mod+Shift+I".action.move-column-to-workspace-up = {};
 
-      "Mod+Shift+Page_Down".action.move-workspace-down = {};
-      "Mod+Shift+Page_Up".action.move-workspace-up = {};
-      "Mod+Shift+U".action.move-workspace-down = {};
-      "Mod+Shift+I".action.move-workspace-up = {};
+      "Mod+Ctrl+Page_Down".action.move-workspace-down = {};
+      "Mod+Ctrl+Page_Up".action.move-workspace-up = {};
+      "Mod+Ctrl+U".action.move-workspace-down = {};
+      "Mod+Ctrl+I".action.move-workspace-up = {};
 
       "Mod+1".action.focus-workspace = 1;
       "Mod+2".action.focus-workspace = 2;
@@ -132,8 +132,8 @@
       "Mod+Minus".action.set-column-width = "-10%";
       "Mod+Equal".action.set-column-width = "+10%";
 
-      "Mod+V".action.toggle-window-floating = {};
-      "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = {};
+      "Mod+Shift+V".action.toggle-window-floating = {};
+      "Mod+V".action.switch-focus-between-floating-and-tiling = {};
 
       "Mod+W".action.toggle-column-tabbed-display = {};
 
