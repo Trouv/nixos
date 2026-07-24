@@ -7,11 +7,6 @@
     enableManpages = true;
 
     settings.vim = {
-      theme = {
-        enable = true;
-        name = "dracula";
-      };
-
       spellcheck.enable = true;
 
       lsp = {

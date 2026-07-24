@@ -16,12 +16,17 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     niri,
+    stylix,
     ...
   } @ inputs: {
     nixosConfigurations.pangolin = nixpkgs.lib.nixosSystem {
@@ -39,6 +44,7 @@
 
           home-manager.extraSpecialArgs = {inherit inputs;};
         }
+        stylix.nixosModules.stylix
       ];
     };
   };
