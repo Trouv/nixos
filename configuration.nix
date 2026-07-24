@@ -110,6 +110,14 @@
     simple-scan
     # document viewer
     papers
+    # calendar
+    gnome-calendar
+    # calculator
+    gnome-calculator
+    # maps
+    gnome-maps
+    # weather
+    gnome-weather
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
