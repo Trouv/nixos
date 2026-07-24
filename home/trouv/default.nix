@@ -30,4 +30,6 @@
     # opens when you click on waybar audio module
     pavucontrol
   ];
+
+  services.wpaperd.enable = true;
 }

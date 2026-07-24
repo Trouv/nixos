@@ -156,7 +156,10 @@
 
   stylix = {
     enable = true;
-
+    image = pkgs.fetchurl {
+      url = "https://gruvbox-wallpapers.pages.dev/wallpapers/painting/flower-basket.jpg";
+      hash = "sha256-5hiPxQmzM28fIuCXMowpveYE52yWUJLeaaWGH6NYdZg=";
+    };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
   };
 
