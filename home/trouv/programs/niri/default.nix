@@ -23,9 +23,18 @@
 
     binds = {
       "Mod+Shift+Slash".action.show-hotkey-overlay = {};
-      "Mod+T".action.spawn = "alacritty";
-      "Mod+D".action.spawn = "fuzzel";
-      "Super+Alt+L".action.spawn = "swaylock";
+      "Mod+T" = {
+        action.spawn = "alacritty";
+        hotkey-overlay.title = "Open terminal";
+      };
+      "Mod+D" = {
+        action.spawn = "fuzzel";
+        hotkey-overlay.title = "Open app launcher";
+      };
+      "Mod+Alt+L" = {
+        action.spawn = "swaylock";
+        hotkey-overlay.title = "Lock screen";
+      };
 
       "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
       "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
