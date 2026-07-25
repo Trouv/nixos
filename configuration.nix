@@ -162,6 +162,9 @@
       hash = "sha256-5hiPxQmzM28fIuCXMowpveYE52yWUJLeaaWGH6NYdZg=";
     };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+
+    opacity.desktop = 0.9;
+    opacity.terminal = 0.9;
   };
 
   # This value determines the NixOS release from which the default
