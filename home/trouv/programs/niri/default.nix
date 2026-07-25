@@ -14,6 +14,9 @@
 
       default-column-width = {proportion = 1. / 2.;};
 
+      focus-ring.enable = false;
+      border.enable = false;
+
       gaps = 8;
     };
 
