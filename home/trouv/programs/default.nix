@@ -28,4 +28,7 @@
   custom.pgp.enable = true;
 
   programs.vesktop.enable = true;
+
+  # showoff
+  programs.fastfetch.enable = true;
 }
