@@ -13,7 +13,8 @@
       url = "github:NotAShelf/nvf";
     };
     niri = {
-      url = "github:sodiboo/niri-flake";
+      # fork used to get new background effects like "blur"
+      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
