@@ -156,6 +156,7 @@
 
   stylix = {
     enable = true;
+    # Jan Brueghel - Flowers in a Basket and a Vase, 1615
     image = pkgs.fetchurl {
       url = "https://gruvbox-wallpapers.pages.dev/wallpapers/painting/flower-basket.jpg";
       hash = "sha256-5hiPxQmzM28fIuCXMowpveYE52yWUJLeaaWGH6NYdZg=";
