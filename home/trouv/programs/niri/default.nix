@@ -27,7 +27,7 @@
     binds = {
       "Mod+Shift+Slash".action.show-hotkey-overlay = {};
       "Mod+Return" = {
-        action.spawn = "alacritty";
+        action.spawn = "kitty";
         hotkey-overlay.title = "Open terminal";
       };
       "Mod+D" = {
@@ -174,7 +174,7 @@
         open-maximized = true;
       }
       {
-        matches = [{app-id = "^Alacritty$";}];
+        matches = [{app-id = "^kitty$";}];
         background-effect.blur = true;
       }
     ];
