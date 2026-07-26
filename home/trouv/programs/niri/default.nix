@@ -41,6 +41,10 @@
 
       "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
       "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
+      "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+
+      "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "set" "10%+"];
+      "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "set" "10%-"];
 
       "Mod+O".action.toggle-overview = {};
       "Mod+Q".action.close-window = {};
