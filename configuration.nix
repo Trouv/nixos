@@ -123,6 +123,26 @@
     tonearm
     # media control
     playerctl
+
+    # gaming..
+    (heroic.override {
+      extraPkgs = pkgs':
+        with pkgs'; [
+          gamescope
+          gamemode
+        ];
+    })
+    lutris # install lutris launcher
+    protonup-qt # GUI for installing custom Proton versions like GE_Proton
+    (retroarch.withCores (
+      cores:
+        with cores; [
+          snes9x
+        ]
+    ))
+
+    # x support
+    xwayland-satellite
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -170,6 +190,16 @@
 
     opacity.desktop = 0.9;
     opacity.terminal = 0.9;
+  };
+
+  # gaming
+  programs.gamemode.enable = true; # for performance mode
+  programs.gamescope.enable = true;
+
+  programs.steam = {
+    enable = true; # install steam
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
   # This value determines the NixOS release from which the default

@@ -181,13 +181,18 @@
         open-maximized = true;
       }
       {
-        matches = [{app-id = "^kitty$";}];
-        background-effect.blur = true;
-      }
-      {
         matches = [{app-id = "^.*Tonearm$";}];
         open-on-workspace = "media";
         open-maximized = true;
+      }
+      {
+        matches = [{app-id = "^(steam|heroic|.*RetroArch|.*Lutris)$";}];
+        open-on-workspace = "games";
+        open-maximized = true;
+      }
+      {
+        matches = [{app-id = "^kitty$";}];
+        background-effect.blur = true;
       }
     ];
   };
