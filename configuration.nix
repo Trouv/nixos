@@ -118,6 +118,11 @@
     gnome-maps
     # weather
     gnome-weather
+
+    # tidal client
+    tonearm
+    # media control
+    playerctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -42,6 +42,9 @@
       "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
       "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
       "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+      "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
+      "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
+      "XF86AudioNext".action.spawn = ["playerctl" "next"];
 
       "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "set" "10%+"];
       "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "set" "10%-"];
@@ -180,6 +183,11 @@
       {
         matches = [{app-id = "^kitty$";}];
         background-effect.blur = true;
+      }
+      {
+        matches = [{app-id = "^.*Tonearm$";}];
+        open-on-workspace = "media";
+        open-maximized = true;
       }
     ];
   };
