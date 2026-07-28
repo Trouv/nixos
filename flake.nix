@@ -14,7 +14,7 @@
     };
     niri = {
       # fork used to get new background effects like "blur"
-      url = "github:epireyn/niri-flake";
+      url = "github:Trouv/niri-flake/fix/lib-displayinfo-0-3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
