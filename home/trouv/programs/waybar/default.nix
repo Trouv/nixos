@@ -1,3 +1,9 @@
+# This is mostly the default waybar config but with minor adjustments:
+# - 12 hour clock
+# - unused modules removed
+# - niri workspaces on the left
+# - some spaces after icons that were getting cut off
+# - removed keyboard-state module
 {
   programs.waybar = {
     enable = true;
@@ -14,21 +20,12 @@
         "memory"
         "temperature"
         "backlight"
-        "keyboard-state"
         "battery"
         "battery#bat2"
         "clock"
         "tray"
         "custom/power"
       ];
-      "keyboard-state" = {
-        numlock = true;
-        format = "{name} {icon}";
-        format-icons = {
-          locked = "";
-          unlocked = "";
-        };
-      };
       "mpd" = {
         format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
         format-disconnected = "Disconnected ";
@@ -66,6 +63,7 @@
         spacing = 10;
       };
       "clock" = {
+        format = "{:%I:%M %p}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt = "{:%Y-%m-%d}";
       };
