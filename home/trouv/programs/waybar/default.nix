@@ -159,4 +159,6 @@
     recursive = true;
     source = ./dot;
   };
+
+  stylix.targets.waybar.font = "sansSerif";
 }
