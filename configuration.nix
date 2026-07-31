@@ -143,6 +143,9 @@
 
     # x support
     xwayland-satellite
+
+    # backup client
+    kopia
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
