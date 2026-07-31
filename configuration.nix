@@ -190,6 +190,12 @@
 
     opacity.desktop = 0.9;
     opacity.terminal = 0.9;
+
+    cursor = {
+      package = pkgs.hackneyed;
+      name = "Hackneyed";
+      size = 22;
+    };
   };
 
   # gaming
