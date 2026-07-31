@@ -33,17 +33,17 @@
         unknown-tag = "N/A";
         interval = 5;
         consume-icons = {
-          on = " ";
+          on = "";
         };
         random-icons = {
-          off = "<span color=\"#f53c3c\"></span> ";
-          on = " ";
+          off = "<span color=\"#f53c3c\"></span>";
+          on = "";
         };
         repeat-icons = {
-          on = " ";
+          on = "";
         };
         single-icons = {
-          on = "1 ";
+          on = "1";
         };
         state-icons = {
           paused = "";
@@ -97,29 +97,29 @@
         format-alt = "{time} {icon}";
         # "format-good" = ""; // An empty format will hide the module
         # "format-full" = "";
-        format-icons = ["" "" "" "" ""];
+        format-icons = [" " " " " " " " " "];
       };
       "battery#bat2" = {
         bat = "BAT2";
       };
       "power-profiles-daemon" = {
-        format = "{icon} ";
+        format = "{icon}";
         tooltip-format = "Power profile: {profile}\nDriver: {driver}";
         tooltip = true;
         format-icons = {
-          default = "";
-          performance = "";
-          balanced = "";
-          power-saver = "";
+          default = " ";
+          performance = " ";
+          balanced = " ";
+          power-saver = " ";
         };
       };
       "network" = {
         # "interface" = "wlp2*"; // (Optional) To force the use of this interface
         format-wifi = "{essid} ({signalStrength}%)  ";
-        format-ethernet = "{ipaddr}/{cidr} 󰊗 ";
-        tooltip-format = "{ifname} via {gwaddr} 󰊗 ";
-        format-linked = "{ifname} (No IP) 󰊗 ";
-        format-disconnected = "Disconnected ⚠ ";
+        format-ethernet = "{ipaddr}/{cidr} 󰊗";
+        tooltip-format = "{ifname} via {gwaddr} 󰊗";
+        format-linked = "{ifname} (No IP) 󰊗";
+        format-disconnected = "Disconnected ⚠";
         format-alt = "{ifname} = {ipaddr}/{cidr}";
       };
       "pulseaudio" = {
@@ -128,15 +128,15 @@
         format-bluetooth = "{volume}% {icon} {format_source}";
         format-bluetooth-muted = "󰅶 {icon} {format_source}";
         format-muted = "󰅶 {format_source}";
-        format-source = "{volume}% ";
-        format-source-muted = "";
+        format-source = "{volume}%  ";
+        format-source-muted = " ";
         format-icons = {
-          headphone = " ";
-          hands-free = "󰂑 ";
-          headset = "󰂑 ";
-          phone = " ";
-          portable = " ";
-          car = " ";
+          headphone = "";
+          hands-free = "󰂑";
+          headset = "󰂑";
+          phone = "";
+          portable = "";
+          car = "";
           default = [" " " " " "];
         };
         on-click = "pavucontrol";
