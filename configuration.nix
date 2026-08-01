@@ -218,6 +218,24 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  # kopia snapshot frequency
+  systemd.timers."kopia-snapshot-home" = {
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnBootSec = "5m";
+      OnUnitActiveSec = "5m";
+      Unit = "kopia-snapshot-home.service";
+    };
+  };
+  systemd.services."kopia-snapshot-home" = {
+    path = [pkgs.kopia];
+    script = "kopia snapshot create /home/trouv";
+    serviceConfig = {
+      Type = "oneshot";
+      User = "trouv";
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
