@@ -5,7 +5,7 @@
         tap = true;
         natural-scroll = true;
       };
-      keyboard.xkb.options = "caps:swapescape";
+      keyboard.xkb.options = "caps:escape";
     };
 
     layout = {
