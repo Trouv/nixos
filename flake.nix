@@ -11,6 +11,7 @@
     # neovim distribution with nice defaults and nix config
     nvf = {
       url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
       # fork used to get new background effects like "blur"
