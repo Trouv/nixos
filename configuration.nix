@@ -4,11 +4,12 @@
 {
   pkgs,
   inputs,
+  systemSettings,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    systemSettings.hardware-configuration
     inputs.niri.nixosModules.niri
   ];
 
@@ -23,8 +24,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."luks-e72a7a07-20ec-444d-a711-c693cf9ed082".device = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
-  networking.hostName = "pangolin"; # Define your hostname.
+  boot.initrd.luks.devices."${systemSettings.luksDeviceName}".device = systemSettings.luksDevicePath;
+  networking.hostName = systemSettings.hostName; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
