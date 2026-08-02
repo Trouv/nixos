@@ -154,6 +154,9 @@
 
     # backup client
     kopia
+
+    # temperature sensors
+    lm_sensors
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
