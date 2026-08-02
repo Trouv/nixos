@@ -11,6 +11,7 @@
     # Include the results of the hardware scan.
     systemSettings.hardware-configuration
     inputs.niri.nixosModules.niri
+    ./cachix.nix
   ];
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
@@ -157,6 +158,9 @@
 
     # temperature sensors
     lm_sensors
+
+    # extra binary cache
+    cachix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
