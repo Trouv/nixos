@@ -178,12 +178,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Caps -> Esc
-  services.udev.extraHwdb = ''
-    evdev:atkbd:*
-      KEYBOARD_KEY_3a=esc
-  '';
-
   # enables waybar power profiles module
   services.power-profiles-daemon.enable = true;
 

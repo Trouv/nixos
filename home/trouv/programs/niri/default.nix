@@ -1,8 +1,11 @@
 {systemSettings, ...}: {
   programs.niri.settings = {
-    input.touchpad = {
-      tap = true;
-      natural-scroll = true;
+    input = {
+      touchpad = {
+        tap = true;
+        natural-scroll = true;
+      };
+      keyboard.xkb.options = "caps:swapescape";
     };
 
     layout = {
