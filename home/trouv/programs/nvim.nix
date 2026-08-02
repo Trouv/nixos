@@ -22,14 +22,7 @@
 
       languages.rust = {
         enable = true;
-        lsp = {
-          enable = true;
-          opts = ''
-            ["rust-analyzer"] = {
-              cargo = {allFeatures = true},
-            }
-          '';
-        };
+        lsp.enable = true;
       };
 
       languages.yaml = {
