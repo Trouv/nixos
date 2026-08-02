@@ -1,4 +1,4 @@
-{
+{systemSettings, ...}: {
   programs.niri.settings = {
     input.touchpad = {
       tap = true;
@@ -7,15 +7,19 @@
 
     layout = {
       preset-column-widths = [
+        {proportion = 1. / 4.;}
         {proportion = 1. / 3.;}
         {proportion = 1. / 2.;}
         {proportion = 2. / 3.;}
+        {proportion = 3. / 4.;}
       ];
 
-      default-column-width = {proportion = 1. / 2.;};
+      default-column-width = {proportion = systemSettings.landscapeWidthProportion / 2.;};
 
       focus-ring.enable = false;
       border.enable = false;
+
+      always-center-single-column = true;
 
       gaps = 8;
     };
@@ -184,26 +188,27 @@
       {
         matches = [{app-id = "^vesktop$";}];
         open-on-workspace = "chat";
-        open-maximized = true;
+        default-column-width.proportion = systemSettings.landscapeWidthProportion;
       }
       {
         matches = [{app-id = "^firefox$";}];
         open-on-workspace = "web";
-        open-maximized = true;
+        default-column-width.proportion = systemSettings.landscapeWidthProportion;
       }
       {
         matches = [{app-id = "^.*Tonearm$";}];
         open-on-workspace = "media";
-        open-maximized = true;
+        default-column-width.proportion = systemSettings.landscapeWidthProportion;
       }
       {
         matches = [{app-id = "^(steam|heroic|.*RetroArch|.*Lutris)$";}];
         open-on-workspace = "games";
-        open-maximized = true;
+        default-column-width.proportion = systemSettings.landscapeWidthProportion;
       }
       {
         matches = [{app-id = "^kitty$";}];
         background-effect.blur = true;
+        default-column-width.proportion = systemSettings.landscapeWidthProportion / 2.;
       }
     ];
   };
