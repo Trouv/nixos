@@ -205,6 +205,13 @@
         open-on-workspace = "games";
         default-column-width.proportion = systemSettings.landscapeWidthProportion;
       }
+      # non-primary steam windows open in smaller windows
+      {
+        matches = [{app-id = "^steam$";}];
+        excludes = [{title = "^Steam$";}];
+        open-on-workspace = "games";
+        default-column-width.proportion = systemSettings.landscapeWidthProportion / 2.;
+      }
       {
         matches = [{app-id = "^kitty$";}];
         background-effect.blur = true;
