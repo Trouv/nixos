@@ -129,7 +129,8 @@
     gnome-weather
 
     # tidal client
-    tonearm
+    inputs.tonearm.packages.${pkgs.stdenv.hostPlatform.system}.tonearm
+
     # media control
     playerctl
 

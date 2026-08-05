@@ -22,6 +22,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tonearm = {
+      url = "git+https://codeberg.org/dergs/Tonearm.git?ref=statemachine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
