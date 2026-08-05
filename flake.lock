@@ -221,16 +221,15 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1785202701,
-        "narHash": "sha256-I88/mGX7CfovgBJ1kaIG2s2aa7A8ExPPNfvfr2hupVA=",
-        "owner": "Trouv",
+        "lastModified": 1785898735,
+        "narHash": "sha256-5CjkrKNFlfPxwhISptR+UkkJx/pTKTLUJHmXL565k4Q=",
+        "owner": "epireyn",
         "repo": "niri-flake",
-        "rev": "dc16be4fe7dca4264ca0338232075b06eddb9b85",
+        "rev": "8021817b5b809ae8bd8c97a65937d858452c6e32",
         "type": "github"
       },
       "original": {
-        "owner": "Trouv",
-        "ref": "fix/lib-displayinfo-0-3",
+        "owner": "epireyn",
         "repo": "niri-flake",
         "type": "github"
       }
@@ -255,11 +254,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1784570726,
-        "narHash": "sha256-9EMn69JBcFWFgUM7f0VBAX+jBby5b9H3M59U75+5yI4=",
+        "lastModified": 1785701241,
+        "narHash": "sha256-ircVOzPWRircI39ac/tqJajr5OoJxEVrDlBb05TULEk=",
         "owner": "niri-wm",
         "repo": "niri",
-        "rev": "7f26c3ee804fb6ed458ef7fb0e3c794f14e0b3bc",
+        "rev": "feb3e43f1475e0865bb89cbd1e898b34d1d2ccf6",
         "type": "github"
       },
       "original": {
@@ -286,11 +285,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1785104993,
-        "narHash": "sha256-eKbrvPoAOFutbYMdbB3r5EQVmFxKv24iKqHPPUXA0gM=",
+        "lastModified": 1785858998,
+        "narHash": "sha256-fKCq5jphd6l/Ms6gc3dptkw/TcKLYub9lQE5g6rbbkc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8623c4c20aa4ca2f5fb81510d2944066c3fb0d96",
+        "rev": "04607e1165ac22c5fde6dcc54c9e0b3c0487c555",
         "type": "github"
       },
       "original": {
@@ -492,11 +491,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785883880,
-        "narHash": "sha256-IwCUOiC3LY75V1K7I0NYfsMJX3SyqpOR/vS6ROfm3f8=",
+        "lastModified": 1785944393,
+        "narHash": "sha256-bjIVmOn2SjQS/ydB4JHwVRkahhmBDHt/sa84IBu81Tk=",
         "ref": "statemachine",
-        "rev": "bb6bb99f312b43faa0909b86ab93637f26f39b0c",
-        "revCount": 824,
+        "rev": "c868e356bd0247307cdd8b93aa3722e2556f820f",
+        "revCount": 825,
         "type": "git",
         "url": "https://codeberg.org/dergs/Tonearm.git"
       },
