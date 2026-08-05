@@ -31,4 +31,6 @@
 
   # showoff
   programs.fastfetch.enable = true;
+
+  programs.obs-studio.enable = true;
 }
