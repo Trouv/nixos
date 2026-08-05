@@ -201,7 +201,8 @@
       {
         matches = [{app-id = "^.*Tonearm$";}];
         open-on-workspace = "media";
-        default-column-width.proportion = systemSettings.landscapeWidthProportion;
+        # 2/3 to work-around a bug where album collections don't page if 2 pages are visible
+        default-column-width.proportion = systemSettings.landscapeWidthProportion * 2. / 3.;
       }
       {
         matches = [{app-id = "^(steam|heroic|.*RetroArch|.*Lutris)$";}];
