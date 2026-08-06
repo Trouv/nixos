@@ -35,73 +35,50 @@
     stylix,
     ...
   } @ inputs: {
-    nixosConfigurations = {
-      pangolin = let
-        systemSettings = {
-          hostName = "pangolin";
-          luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
-          luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
-          hardware-configuration = ./hardware-configuration/pangolin.nix;
-          landscapeWidthProportion = 1. / 1.;
-        };
-      in
-        nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            inherit systemSettings;
-          };
-          modules = [
-            # Import the previous configuration.nix we used,
-            # so the old configuration file still takes effect
-            ./configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+    nixosConfigurations = let
+      # Takes a systemSettings struct and returns a nixosSystem
+      nixosSystemWithSettings = (
+        systemSettings:
+          nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs;
+              inherit systemSettings;
+            };
+            modules = [
+              # Import the previous configuration.nix we used,
+              # so the old configuration file still takes effect
+              ./configuration.nix
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
 
-              home-manager.users.trouv = import ./home/trouv;
+                home-manager.users.trouv = import ./home/trouv;
 
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit systemSettings;
-              };
-            }
-            stylix.nixosModules.stylix
-          ];
-        };
-      torrent = let
-        systemSettings = {
-          hostName = "torrent";
-          luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
-          luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
-          hardware-configuration = ./hardware-configuration/torrent.nix;
-          landscapeWidthProportion = 1. / 2.;
-        };
-      in
-        nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            inherit systemSettings;
-          };
-          modules = [
-            # Import the previous configuration.nix we used,
-            # so the old configuration file still takes effect
-            ./configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-
-              home-manager.users.trouv = import ./home/trouv;
-
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit systemSettings;
-              };
-            }
-            stylix.nixosModules.stylix
-          ];
-        };
+                home-manager.extraSpecialArgs = {
+                  inherit inputs;
+                  inherit systemSettings;
+                };
+              }
+              stylix.nixosModules.stylix
+            ];
+          }
+      );
+    in {
+      pangolin = nixosSystemWithSettings {
+        hostName = "pangolin";
+        luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
+        luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
+        hardware-configuration = ./hardware-configuration/pangolin.nix;
+        landscapeWidthProportion = 1. / 1.;
+      };
+      torrent = nixosSystemWithSettings {
+        hostName = "torrent";
+        luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
+        luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
+        hardware-configuration = ./hardware-configuration/torrent.nix;
+        landscapeWidthProportion = 1. / 2.;
+      };
     };
   };
 }
