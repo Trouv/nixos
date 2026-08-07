@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     systemSettings.hardware-configuration
     ./cachix.nix
+    ./nvidia.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -63,11 +64,12 @@
     cachix
   ];
 
-  # AMD GPU
+  # GPU
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
+  nvidia.enable = systemSettings.nvidia;
 
   # The default resolv.conf is buggy on my personal network
   # Letting systemd-resolved manage it seems to work around the issue.

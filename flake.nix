@@ -101,6 +101,7 @@
             luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
             hardware-configuration = ./hardware-configuration/pangolin.nix;
             landscapeWidthProportion = 1. / 1.;
+            nvidia = false;
           }
           {
             hostName = "torrent";
@@ -108,6 +109,7 @@
             luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
             hardware-configuration = ./hardware-configuration/torrent.nix;
             landscapeWidthProportion = 1. / 2.;
+            nvidia = false;
           }
         ]));
   };
