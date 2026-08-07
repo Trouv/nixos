@@ -55,16 +55,14 @@
       );
 
       # Takes a systemSettings struct and returns a set of arguments to supply to lib.nixosSystem for the final system
-      nixosSystemArgsWithSettings = (
+      finalNixosSystemArgsWithSettings = (
         systemSettings: {
           specialArgs = {
             inherit inputs;
             inherit systemSettings;
           };
           modules = [
-            # Import the previous configuration.nix we used,
-            # so the old configuration file still takes effect
-            ./configuration.nix
+            ./finalConfiguration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -83,31 +81,34 @@
       );
 
       # Takes a systemSettings struct and returns a nixosSystem for the final system
-      nixosSystemWithSettings = (
-        systemSettings: nixpkgs.lib.nixosSystem (nixosSystemArgsWithSettings systemSettings)
+      finalNixosSystemWithSettings = (
+        systemSettings: nixpkgs.lib.nixosSystem (finalNixosSystemArgsWithSettings systemSettings)
       );
 
-      bothNixosSystemsWithSettings = (
+      # defines both a pre-system and final-system for the same systemSettings.
+      preAndFinalNixosSystemsFromSettings = (
         systemSettings: {
           "pre-${systemSettings.hostName}" = preNixosSystemWithSettings systemSettings;
-          "${systemSettings.hostName}" = nixosSystemWithSettings systemSettings;
+          "${systemSettings.hostName}" = finalNixosSystemWithSettings systemSettings;
         }
       );
-    in (nixpkgs.lib.mergeAttrsList [
-      (bothNixosSystemsWithSettings {
-        hostName = "pangolin";
-        luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
-        luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
-        hardware-configuration = ./hardware-configuration/pangolin.nix;
-        landscapeWidthProportion = 1. / 1.;
-      })
-      (bothNixosSystemsWithSettings {
-        hostName = "torrent";
-        luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
-        luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
-        hardware-configuration = ./hardware-configuration/torrent.nix;
-        landscapeWidthProportion = 1. / 2.;
-      })
-    ]);
+    in (nixpkgs.lib.mergeAttrsList
+      (nixpkgs.lib.map preAndFinalNixosSystemsFromSettings
+        [
+          {
+            hostName = "pangolin";
+            luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
+            luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
+            hardware-configuration = ./hardware-configuration/pangolin.nix;
+            landscapeWidthProportion = 1. / 1.;
+          }
+          {
+            hostName = "torrent";
+            luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
+            luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
+            hardware-configuration = ./hardware-configuration/torrent.nix;
+            landscapeWidthProportion = 1. / 2.;
+          }
+        ]));
   };
 }
