@@ -36,49 +36,78 @@
     ...
   } @ inputs: {
     nixosConfigurations = let
-      # Takes a systemSettings struct and returns a nixosSystem
-      nixosSystemWithSettings = (
-        systemSettings:
-          nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs;
-              inherit systemSettings;
-            };
-            modules = [
-              # Import the previous configuration.nix we used,
-              # so the old configuration file still takes effect
-              ./configuration.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-
-                home-manager.users.trouv = import ./home/trouv;
-
-                home-manager.extraSpecialArgs = {
-                  inherit inputs;
-                  inherit systemSettings;
-                };
-              }
-              stylix.nixosModules.stylix
-            ];
-          }
+      # Takes a systemSettings struct and returns a set of arguments to supply to lib.nixosSystem for the pre-system (initial install)
+      preNixosSystemArgsWithSettings = (
+        systemSettings: {
+          specialArgs = {
+            inherit inputs;
+            inherit systemSettings;
+          };
+          modules = [
+            ./preConfiguration.nix
+          ];
+        }
       );
-    in {
-      pangolin = nixosSystemWithSettings {
+
+      # Takes a systemSettings struct and returns a nixosSystem for the pre-system (initial install)
+      preNixosSystemWithSettings = (
+        systemSettings: nixpkgs.lib.nixosSystem (preNixosSystemArgsWithSettings systemSettings)
+      );
+
+      # Takes a systemSettings struct and returns a set of arguments to supply to lib.nixosSystem for the final system
+      nixosSystemArgsWithSettings = (
+        systemSettings: {
+          specialArgs = {
+            inherit inputs;
+            inherit systemSettings;
+          };
+          modules = [
+            # Import the previous configuration.nix we used,
+            # so the old configuration file still takes effect
+            ./configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.trouv = import ./home/trouv;
+
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit systemSettings;
+              };
+            }
+            stylix.nixosModules.stylix
+          ];
+        }
+      );
+
+      # Takes a systemSettings struct and returns a nixosSystem for the final system
+      nixosSystemWithSettings = (
+        systemSettings: nixpkgs.lib.nixosSystem (nixosSystemArgsWithSettings systemSettings)
+      );
+
+      bothNixosSystemsWithSettings = (
+        systemSettings: {
+          "pre-${systemSettings.hostName}" = preNixosSystemWithSettings systemSettings;
+          "${systemSettings.hostName}" = nixosSystemWithSettings systemSettings;
+        }
+      );
+    in (nixpkgs.lib.mergeAttrsList [
+      (bothNixosSystemsWithSettings {
         hostName = "pangolin";
         luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
         luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
         hardware-configuration = ./hardware-configuration/pangolin.nix;
         landscapeWidthProportion = 1. / 1.;
-      };
-      torrent = nixosSystemWithSettings {
+      })
+      (bothNixosSystemsWithSettings {
         hostName = "torrent";
         luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
         luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
         hardware-configuration = ./hardware-configuration/torrent.nix;
         landscapeWidthProportion = 1. / 2.;
-      };
-    };
+      })
+    ]);
   };
 }
