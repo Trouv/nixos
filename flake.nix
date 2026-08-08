@@ -111,6 +111,14 @@
             landscapeWidthProportion = 1. / 2.;
             nvidia = false;
           }
+          {
+            hostName = "oryx";
+            luksDeviceName = "luks-9019da06-827c-4c90-9b68-5c0099d89a13";
+            luksDevicePath = "/dev/disk/by-uuid/9019da06-827c-4c90-9b68-5c0099d89a13";
+            hardware-configuration = ./hardware-configuration/oryx.nix;
+            landscapeWidthProportion = 1. / 1.;
+            nvidia = true;
+          }
         ]));
   };
 }
