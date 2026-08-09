@@ -4,6 +4,7 @@
 {
   pkgs,
   inputs,
+  systemSettings,
   ...
 }: {
   imports = [
@@ -180,10 +181,10 @@
   };
   systemd.services."kopia-snapshot-home" = {
     path = [pkgs.kopia];
-    script = "kopia snapshot create /home/trouv";
+    script = "kopia snapshot create /home/${systemSettings.primaryUser.username}";
     serviceConfig = {
       Type = "oneshot";
-      User = "trouv";
+      User = systemSettings.primaryUser.username;
     };
   };
 }

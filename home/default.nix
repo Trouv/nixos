@@ -1,10 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  systemSettings,
+  ...
+}: {
   imports = [
     ./programs
   ];
 
-  home.username = "trouv";
-  home.homeDirectory = "/home/trouv";
+  home.username = systemSettings.primaryUser.username;
+  home.homeDirectory = "/home/${systemSettings.primaryUser.username}";
 
   home.sessionVariables = {
     EDITOR = "nvim";

@@ -68,7 +68,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.trouv = import ./home;
+              home-manager.users.${systemSettings.primaryUser.username} = import ./home;
 
               home-manager.extraSpecialArgs = {
                 inherit inputs;
@@ -97,6 +97,7 @@
         [
           {
             hostName = "pangolin";
+            primaryUser = import ./users/trouv.nix;
             luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
             luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
             hardware-configuration = ./hardware-configuration/pangolin.nix;
@@ -105,6 +106,7 @@
           }
           {
             hostName = "torrent";
+            primaryUser = import ./users/trouv.nix;
             luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
             luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
             hardware-configuration = ./hardware-configuration/torrent.nix;
@@ -113,6 +115,7 @@
           }
           {
             hostName = "oryx";
+            primaryUser = import ./users/trouv.nix;
             luksDeviceName = "luks-9019da06-827c-4c90-9b68-5c0099d89a13";
             luksDevicePath = "/dev/disk/by-uuid/9019da06-827c-4c90-9b68-5c0099d89a13";
             hardware-configuration = ./hardware-configuration/oryx.nix;

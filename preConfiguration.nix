@@ -48,9 +48,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.trouv = {
+  users.users.${systemSettings.primaryUser.username} = {
     isNormalUser = true;
-    description = "Trevor Lovell";
+    description = systemSettings.primaryUser.fullname;
     extraGroups = ["networkmanager" "wheel" "input"];
   };
 
