@@ -68,7 +68,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.trouv = import ./home/trouv;
+              home-manager.users.trouv = import ./home;
 
               home-manager.extraSpecialArgs = {
                 inherit inputs;
