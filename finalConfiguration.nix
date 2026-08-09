@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     inputs.niri.nixosModules.niri
     ./preConfiguration.nix
+    ./scripts.nix
   ];
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
