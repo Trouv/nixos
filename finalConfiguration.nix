@@ -130,9 +130,6 @@
     # x support
     xwayland-satellite
 
-    # backup client
-    kopia
-
     # temperature sensors
     lm_sensors
   ];
@@ -168,23 +165,5 @@
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     protontricks.enable = true;
-  };
-
-  # kopia snapshot frequency
-  systemd.timers."kopia-snapshot-home" = {
-    wantedBy = ["timers.target"];
-    timerConfig = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "5m";
-      Unit = "kopia-snapshot-home.service";
-    };
-  };
-  systemd.services."kopia-snapshot-home" = {
-    path = [pkgs.kopia];
-    script = "kopia snapshot create /home/${systemSettings.primaryUser.username}";
-    serviceConfig = {
-      Type = "oneshot";
-      User = systemSettings.primaryUser.username;
-    };
   };
 }

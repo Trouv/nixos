@@ -1,4 +1,8 @@
-{systemSettings, ...}: {
+{
+  lib,
+  systemSettings,
+  ...
+}: {
   programs.niri.settings = {
     input = {
       touchpad = {
@@ -27,12 +31,11 @@
       gaps = 8;
     };
 
-    spawn-at-startup = [
-      {argv = ["waybar"];}
-      {
-        sh = "kitty --hold kopia-connect-vatia";
-      }
-    ];
+    spawn-at-startup =
+      [
+        {argv = ["waybar"];}
+      ]
+      ++ (lib.lists.optionals systemSettings.kopiaClientVatia [{sh = "kitty sh -c \"kopia-connect-vatia && sleep 5\"";}]);
 
     animations.workspace-switch.enable = false;
 

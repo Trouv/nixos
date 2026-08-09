@@ -13,6 +13,7 @@
     systemSettings.hardware-configuration
     ./cachix.nix
     ./nvidia.nix
+    ./kopiaClientVatia.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -74,6 +75,8 @@
   # The default resolv.conf is buggy on my personal network
   # Letting systemd-resolved manage it seems to work around the issue.
   services.resolved.enable = true;
+
+  kopiaClientVatia.enable = systemSettings.kopiaClientVatia;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
