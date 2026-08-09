@@ -491,11 +491,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786041174,
-        "narHash": "sha256-R2K89fN8eECLxe3LXaHR7wMLkz4dfJRt3HGNs9kp+ok=",
+        "lastModified": 1786225977,
+        "narHash": "sha256-wt4dqeRZKyiulX4stfC2u3MHumuTsJcl5ERYofisL9o=",
         "ref": "statemachine",
-        "rev": "3f0ad8ee5bbb3da41569cfa635b74847168f6374",
-        "revCount": 826,
+        "rev": "72de8fc2f2d6b3fe362f2b64548c6deaae5dc11d",
+        "revCount": 851,
         "type": "git",
         "url": "https://codeberg.org/dergs/Tonearm.git"
       },
