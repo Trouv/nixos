@@ -132,6 +132,9 @@
 
     # temperature sensors
     lm_sensors
+
+    # gamedev
+    blender
   ];
 
   # enables waybar power profiles module
