@@ -30,20 +30,6 @@
         lsp.enable = true;
       };
 
-      globals = {
-        rustfmt_command = "~/.cargo/bin/rustfmt +nightly";
-        rustfmt_autosave = 1;
-      };
-
-      keymaps = [
-        {
-          key = "<leader>lge";
-          mode = "n";
-          silent = true;
-          action = ":RustLsp expandMacro<CR>";
-        }
-      ];
-
       comments.comment-nvim.enable = true;
 
       utility.surround.enable = true;
