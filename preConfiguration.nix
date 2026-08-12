@@ -24,7 +24,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."${systemSettings.luksDeviceName}".device = systemSettings.luksDevicePath;
+  boot.initrd.luks.devices."luks-${systemSettings.luksDeviceUuid}".device = "/dev/disk/by-uuid/${systemSettings.luksDeviceUuid}";
   networking.hostName = systemSettings.hostName;
 
   # Enable networking
