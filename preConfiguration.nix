@@ -10,7 +10,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    systemSettings.hardware-configuration
+    ./hardware-configuration/${systemSettings.hostName}.nix
     ./cachix.nix
     ./nvidia.nix
     ./kopiaClientVatia.nix

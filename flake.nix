@@ -100,7 +100,6 @@
             primaryUser = import ./users/trouv.nix;
             luksDeviceName = "luks-e72a7a07-20ec-444d-a711-c693cf9ed082";
             luksDevicePath = "/dev/disk/by-uuid/e72a7a07-20ec-444d-a711-c693cf9ed082";
-            hardware-configuration = ./hardware-configuration/pangolin.nix;
             landscapeWidthProportion = 1. / 1.;
             kopiaClientVatia = true;
             nvidia = false;
@@ -110,7 +109,6 @@
             primaryUser = import ./users/trouv.nix;
             luksDeviceName = "luks-754856e4-a88a-4097-a8e7-2b11635846dc";
             luksDevicePath = "/dev/disk/by-uuid/754856e4-a88a-4097-a8e7-2b11635846dc";
-            hardware-configuration = ./hardware-configuration/torrent.nix;
             landscapeWidthProportion = 1. / 2.;
             kopiaClientVatia = true;
             nvidia = false;
@@ -120,7 +118,6 @@
             primaryUser = import ./users/trouv.nix;
             luksDeviceName = "luks-9019da06-827c-4c90-9b68-5c0099d89a13";
             luksDevicePath = "/dev/disk/by-uuid/9019da06-827c-4c90-9b68-5c0099d89a13";
-            hardware-configuration = ./hardware-configuration/oryx.nix;
             landscapeWidthProportion = 1. / 1.;
             kopiaClientVatia = true;
             nvidia = true;
