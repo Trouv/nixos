@@ -135,6 +135,7 @@
 
     # gamedev
     blender
+    krita
   ];
 
   # enables waybar power profiles module
