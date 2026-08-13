@@ -37,6 +37,12 @@ nvim systemSettings/$DESIRED_HOSTNAME.nix
 git add systemSettings
 ```
 
+Make a backup of the original nixos config, and replace it with a symlink to the repository.
+```bash
+sudo mv /etc/nixos ~/original-nixos
+sudo ln -s `pwd` /etc/nixos
+```
+
 Install the "pre-configuration".
 This is a lightweight nixos config that gives you the bare essentials and some bonuses to make the full build experience better.
 The name of the pre-configuration is your hostname prefixed with `pre-`.
