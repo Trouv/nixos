@@ -55,8 +55,3 @@ Install the final configuration and reboot.
 sudo nixos-rebuild switch
 reboot
 ```
-
-On login, you will need to start the niri session manually:
-```bash
-niri-session
-```
