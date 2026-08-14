@@ -171,4 +171,10 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     protontricks.enable = true;
   };
+
+  # display manager
+  services.displayManager = {
+    gdm.enable = true;
+    defaultSession = "niri";
+  };
 }
