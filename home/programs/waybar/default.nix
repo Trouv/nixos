@@ -24,6 +24,7 @@
         "battery#bat2"
         "clock"
         "tray"
+        "custom/apps"
         "custom/power"
       ];
       "mpd" = {
@@ -152,6 +153,10 @@
           "suspend" = "systemctl suspend";
           "hibernate" = "systemctl hibernate";
         };
+      };
+      "custom/apps" = {
+        "format" = "𓃑 ";
+        "on-click" = "fuzzel";
       };
     };
   };
