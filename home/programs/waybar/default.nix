@@ -9,7 +9,7 @@
     enable = true;
     settings.mainBar = {
       spacing = 10;
-      modules-left = ["niri/workspaces"];
+      modules-left = ["custom/blank" "niri/workspaces"];
       modules-right = [
         "mpd"
         "idle_inhibitor"
@@ -26,6 +26,7 @@
         "tray"
         "custom/apps"
         "custom/power"
+        "custom/blank"
       ];
       "mpd" = {
         format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
@@ -149,14 +150,19 @@
         "menu-file" = "$HOME/.config/waybar/power_menu.xml"; # Menu file in resources folder
         "menu-actions" = {
           "shutdown" = "shutdown";
+          "logout" = "niri msg action quit --skip-confirmation";
           "reboot" = "reboot";
           "suspend" = "systemctl suspend";
-          "hibernate" = "systemctl hibernate";
         };
       };
       "custom/apps" = {
-        "format" = "𓃑 ";
+        "format" = "☰";
         "on-click" = "fuzzel";
+        "tooltip" = false;
+      };
+      "custom/blank" = {
+        "format" = " ";
+        "tooltip" = false;
       };
     };
   };
