@@ -37,6 +37,7 @@
       isDefault = true;
       name = "${systemSettings.primaryUser.username}";
       search = {
+        force = true;
         default = "ddg";
         privateDefault = "ddg";
       };
