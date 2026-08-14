@@ -44,6 +44,7 @@
 
       settings = {
         "browser.startup.homepage" = "https://github.com";
+        "browser.sessionstore.resume_from_crash" = false;
       };
     };
 
