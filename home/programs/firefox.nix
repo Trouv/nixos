@@ -1,4 +1,8 @@
 {
+  config,
+  systemSettings,
+  ...
+}: {
   programs.firefox = {
     enable = true;
     policies = {
@@ -26,7 +30,25 @@
       unzip -p latest.xpi manifest.json | jq --raw-output .browser_specific_settings.gecko.id
       rm latest.xpi
       */
-      SearchEngines.Default = "DuckDuckGo";
+      PasswordManagerEnabled = false;
     };
+
+    profiles.${systemSettings.primaryUser.username} = {
+      isDefault = true;
+      name = "${systemSettings.primaryUser.username}";
+      search = {
+        default = "ddg";
+        privateDefault = "ddg";
+      };
+
+      settings = {
+        "browser.startup.homepage" = "https://github.com";
+      };
+    };
+
+    # Silence deprecation warnings from old state version
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
+
+  stylix.targets.firefox.profileNames = ["${systemSettings.primaryUser.username}"];
 }
