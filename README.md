@@ -16,8 +16,9 @@ The commands in these instructions will be parameterized by this:
 export DESIRED_HOSTNAME=<hostname>
 ```
 
-Install git and a text editor and clone the repository
+Install git and a text editor and clone the repository into your home directory.
 ```bash
+cd ~
 nix-shell -p git neovim
 git clone https://github.com/trouv/nixos
 cd nixos
@@ -37,10 +38,9 @@ nvim systemSettings/$DESIRED_HOSTNAME.nix
 git add systemSettings
 ```
 
-Make a backup of the original nixos config, and replace it with a symlink to the repository.
+Move the original nixos config somewhere as a backup.
 ```bash
 sudo mv /etc/nixos ~/original-nixos
-sudo ln -s `pwd` /etc/nixos
 ```
 
 Install the "pre-configuration".
