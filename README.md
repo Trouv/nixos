@@ -18,16 +18,14 @@ export DESIRED_HOSTNAME=<hostname>
 
 Install git and a text editor and clone the repository into your home directory.
 ```bash
-cd ~
 nix-shell -p git neovim
-git clone https://github.com/trouv/nixos
-cd nixos
+git clone https://github.com/trouv/nixos ~/nixos
+cd ~/nixos
 ```
 
 Copy your nixos-auto-generated `hardware-configuration.nix` to the hardware-configuration directory, with a name matching your desired hostname.
 ```bash
 cp /etc/nixos/hardware-configuration.nix hardware-configuration/$DESIRED_HOSTNAME.nix
-git add hardware-configuration
 ```
 
 Add a new system in `systemSettings/`.
@@ -35,12 +33,16 @@ You can copy the template and read the comments to understand what each value sh
 ```bash
 cp systemSettings/template systemSettings/$DESIRED_HOSTNAME.nix
 nvim systemSettings/$DESIRED_HOSTNAME.nix
-git add systemSettings
 ```
 
 Move the original nixos config somewhere as a backup.
 ```bash
 sudo mv /etc/nixos ~/original-nixos
+```
+
+Add the new files to git.
+```bash
+git add systemSettings hardware-configuration
 ```
 
 Install the "pre-configuration".
