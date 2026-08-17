@@ -159,6 +159,8 @@
       name = "Hackneyed";
       size = 22;
     };
+
+    polarity = "dark";
   };
 
   # gaming
