@@ -137,6 +137,9 @@
     blender
     krita
     ardour
+
+    # notifications
+    libnotify
   ];
 
   # enables waybar power profiles module

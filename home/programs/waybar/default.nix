@@ -149,7 +149,7 @@
         "menu" = "on-click";
         "menu-file" = "$HOME/.config/waybar/power_menu.xml"; # Menu file in resources folder
         "menu-actions" = {
-          "shutdown" = "shutdown";
+          "shutdown" = "shutdown 2>&1 | xargs -I % notify-send \"%\"";
           "logout" = "niri msg action quit --skip-confirmation";
           "reboot" = "reboot";
           "suspend" = "systemctl suspend";
