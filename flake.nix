@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     tonearm = {
-      url = "git+https://codeberg.org/dergs/Tonearm.git?ref=statemachine";
+      url = "git+https://codeberg.org/dergs/Tonearm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
