@@ -23,7 +23,7 @@
         enableSshSupport = true;
         # pinentry is a collection of simple PIN or passphrase dialogs used for
         # password entry
-        pinentryPackage = pkgs.pinentry-tty;
+        pinentry.package = pkgs.pinentry-tty;
       };
 
       ## We will put our keygrip here
