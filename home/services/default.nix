@@ -1,4 +1,6 @@
 {
+  imports = [./swayidle.nix];
+
   services.wpaperd.enable = true;
 
   # notification daemon
