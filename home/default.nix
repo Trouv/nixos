@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./programs
+    ./services
   ];
 
   home.username = systemSettings.primaryUser.username;
@@ -34,9 +35,4 @@
     # opens when you click on waybar audio module
     pavucontrol
   ];
-
-  services.wpaperd.enable = true;
-
-  # notification daemon
-  services.mako.enable = true;
 }
