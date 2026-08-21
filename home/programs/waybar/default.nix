@@ -24,6 +24,7 @@
         "battery#bat2"
         "clock"
         "tray"
+        "custom/help"
         "custom/apps"
         "custom/power"
         "custom/blank"
@@ -154,6 +155,11 @@
           "reboot" = "reboot";
           "suspend" = "systemctl suspend";
         };
+      };
+      "custom/help" = {
+        "format" = "? ";
+        "on-click" = "niri msg action show-hotkey-overlay";
+        "tooltip" = false;
       };
       "custom/apps" = {
         "format" = "☰";
