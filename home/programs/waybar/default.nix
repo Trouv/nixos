@@ -18,7 +18,6 @@
         "power-profiles-daemon"
         "cpu"
         "memory"
-        "temperature"
         "backlight"
         "battery"
         "battery#bat2"
@@ -78,11 +77,6 @@
       };
       "memory" = {
         format = "{}% ";
-      };
-      "temperature" = {
-        critical-threshold = 80;
-        format = "{temperatureC}°C {icon}";
-        format-icons = ["󰉬" "" "󰉪"];
       };
       "backlight" = {
         # "device" = "acpi_video1";
