@@ -61,6 +61,8 @@
           activated = "";
           deactivated = "";
         };
+        tooltip-format-activated = "idle inhibitor (activated)";
+        tooltip-format-deactivated = "idle inhibitor (deactivated)";
       };
       "tray" = {
         spacing = 10;
