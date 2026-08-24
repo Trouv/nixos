@@ -108,19 +108,55 @@
       "Mod+Shift+Ctrl+K".action.move-column-to-monitor-up = {};
       "Mod+Shift+Ctrl+L".action.move-column-to-monitor-right = {};
 
-      "Mod+Page_Down".action.focus-workspace-down = {};
-      "Mod+Page_Up".action.focus-workspace-up = {};
-      "Mod+U".action.focus-workspace-down = {};
-      "Mod+I".action.focus-workspace-up = {};
-      "Mod+Shift+Page_Down".action.move-column-to-workspace-down = {};
-      "Mod+Shift+Page_Up".action.move-column-to-workspace-up = {};
-      "Mod+Shift+U".action.move-column-to-workspace-down = {};
-      "Mod+Shift+I".action.move-column-to-workspace-up = {};
+      "Mod+Page_Down" = {
+        action.focus-workspace-down = {};
+        hotkey-overlay.hidden = true;
+      };
+      "Mod+Page_Up" = {
+        action.focus-workspace-up = {};
+        hotkey-overlay.hidden = true;
+      };
+      "Mod+U" = {
+        action.focus-workspace-down = {};
+        hotkey-overlay.title = "Focus Workspace Below";
+      };
+      "Mod+I" = {
+        action.focus-workspace-up = {};
+        hotkey-overlay.title = "Focus Workspace Above";
+      };
+      "Mod+Shift+Page_Down" = {
+        action.move-column-to-workspace-down = {};
+        hotkey-overlay.hidden = true;
+      };
+      "Mod+Shift+Page_Up" = {
+        action.move-column-to-workspace-up = {};
+        hotkey-overlay.hidden = true;
+      };
+      "Mod+Shift+U" = {
+        action.move-column-to-workspace-down = {};
+        hotkey-overlay.title = "Move Column to Workspace Below";
+      };
+      "Mod+Shift+I" = {
+        action.move-column-to-workspace-up = {};
+        hotkey-overlay.title = "Move Column to Workspace Above";
+      };
 
-      "Mod+Ctrl+Page_Down".action.move-workspace-down = {};
-      "Mod+Ctrl+Page_Up".action.move-workspace-up = {};
-      "Mod+Ctrl+U".action.move-workspace-down = {};
-      "Mod+Ctrl+I".action.move-workspace-up = {};
+      "Mod+Ctrl+Page_Down" = {
+        action.move-workspace-down = {};
+        hotkey-overlay.hidden = true;
+      };
+      "Mod+Ctrl+Page_Up" = {
+        action.move-workspace-up = {};
+        hotkey-overlay.hidden = true;
+      };
+      "Mod+Ctrl+U" = {
+        action.move-workspace-down = {};
+        hotkey-overlay.title = "Move Workspace Down";
+      };
+      "Mod+Ctrl+I" = {
+        action.move-workspace-up = {};
+        hotkey-overlay.title = "Move Workspace Up";
+      };
 
       "Mod+1".action.focus-workspace = "1";
       "Mod+2".action.focus-workspace = "2";
