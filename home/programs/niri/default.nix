@@ -261,4 +261,9 @@
       }
     ];
   };
+  xdg.configFile."niri/config.kdl".text = ''
+    include "nix-generated-config.kdl"
+    include optional=true "gaps0.kdl"
+  '';
+  xdg.configFile.niri-config.target = lib.mkForce "niri/nix-generated-config.kdl";
 }
