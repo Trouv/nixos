@@ -53,6 +53,10 @@
         action.spawn = "swaylock";
         hotkey-overlay.title = "Lock screen";
       };
+      "Mod+B" = {
+        action.spawn = ["pkill" "-USR1" "waybar"];
+        hotkey-overlay.title = "Hide or show status bar";
+      };
 
       "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
       "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
