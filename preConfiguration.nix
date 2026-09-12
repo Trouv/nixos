@@ -52,7 +52,7 @@
   users.users.${systemSettings.primaryUser.username} = {
     isNormalUser = true;
     description = systemSettings.primaryUser.fullname;
-    extraGroups = ["networkmanager" "wheel" "input"];
+    extraGroups = ["networkmanager" "wheel" "input" "gamemode"];
   };
 
   # Allow unfree packages
