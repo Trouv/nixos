@@ -6,22 +6,25 @@
     display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
   in {
     enable = true;
-    timeouts = [
+    timeouts = let
+      activeIntervalSeconds = 120;
+      escalateIntervalSeconds = 30;
+    in [
       {
-        timeout = 50; # in seconds
-        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 10 seconds' -t 10000";
+        timeout = activeIntervalSeconds; # in seconds
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in ${escalateIntervalSeconds} seconds' -t ${escalateIntervalSeconds * 1000}";
       }
       {
-        timeout = 60;
+        timeout = activeIntervalSeconds + escalateIntervalSeconds;
         command = lock;
       }
       {
-        timeout = 90;
+        timeout = activeIntervalSeconds + (2 * escalateIntervalSeconds);
         command = display "off";
         resumeCommand = display "on";
       }
       {
-        timeout = 120;
+        timeout = activeIntervalSeconds + (3 * escalateIntervalSeconds);
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
