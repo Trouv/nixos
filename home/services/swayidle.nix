@@ -12,7 +12,7 @@
     in [
       {
         timeout = activeIntervalSeconds; # in seconds
-        command = "${pkgs.libnotify}/bin/notify-send 'Locking in ${escalateIntervalSeconds} seconds' -t ${escalateIntervalSeconds * 1000}";
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in ${toString escalateIntervalSeconds} seconds' -t ${toString (escalateIntervalSeconds * 1000)}";
       }
       {
         timeout = activeIntervalSeconds + escalateIntervalSeconds;
