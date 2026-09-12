@@ -14,20 +14,24 @@
         formatOnSave = true;
       };
 
-      languages.nix = {
-        enable = true;
-        format.enable = true;
-        lsp.enable = true;
-      };
+      languages = {
+        nix = {
+          enable = true;
+          format.enable = true;
+          lsp.enable = true;
+        };
 
-      languages.rust = {
-        enable = true;
-        lsp.enable = true;
-      };
+        rust = {
+          enable = true;
+          lsp.enable = true;
+        };
 
-      languages.yaml = {
-        enable = true;
-        lsp.enable = true;
+        yaml = {
+          enable = true;
+          lsp.enable = true;
+        };
+
+        wgsl.enable = true;
       };
 
       comments.comment-nvim.enable = true;
