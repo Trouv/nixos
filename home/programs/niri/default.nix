@@ -35,7 +35,7 @@
       [
         {argv = ["waybar"];}
       ]
-      ++ (lib.lists.optionals systemSettings.kopiaClientVatia [{sh = "kitty sh -c \"kopia-connect-vatia && sleep 5\"";}]);
+      ++ (lib.lists.optionals systemSettings.kopiaClientVatia [{sh = "kitty sh -c \"until kopia-connect-vatia; do echo kopia connection failed; done && sleep 5\"";}]);
 
     animations.workspace-switch.enable = false;
 
