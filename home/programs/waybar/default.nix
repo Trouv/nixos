@@ -11,7 +11,6 @@
       spacing = 10;
       modules-left = ["custom/blank" "niri/workspaces"];
       modules-right = [
-        "mpd"
         "idle_inhibitor"
         "pulseaudio"
         "network"
@@ -28,32 +27,6 @@
         "custom/power"
         "custom/blank"
       ];
-      "mpd" = {
-        format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-        format-disconnected = "Disconnected ";
-        format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
-        unknown-tag = "N/A";
-        interval = 5;
-        consume-icons = {
-          on = "";
-        };
-        random-icons = {
-          off = "<span color=\"#f53c3c\"></span>";
-          on = "";
-        };
-        repeat-icons = {
-          on = "";
-        };
-        single-icons = {
-          on = "1";
-        };
-        state-icons = {
-          paused = "";
-          playing = "";
-        };
-        tooltip-format = "MPD (connected)";
-        tooltip-format-disconnected = "MPD (disconnected)";
-      };
       "idle_inhibitor" = {
         format = "{icon}";
         format-icons = {
